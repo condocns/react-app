@@ -14,7 +14,7 @@ jobs:
       - name: Login to Docker Hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build Docker Image
-        run: docker build -t condoc/reactjs-app .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/reactjs-app .
       - name: Publsh image to docker hub
         run: docker push ${{ secrets.DOCKER_USERNAME }}/reactjs-app:latest
   deploy: 
